@@ -7,15 +7,28 @@
 //
 
 #import "CFMViewController.h"
+#import "CFMView.h"
 
 @interface CFMViewController()
-@property (strong, nonatomic) IBOutlet UITextField *creditCardTextField;
-@property (strong, nonatomic) IBOutlet UIImageView *creditCardImageView;
-@property (strong, nonatomic) IBOutlet UITextField *expirationDateTextField;
-@property (strong, nonatomic) IBOutlet UITextField *CVVTextField;
-@property (strong, nonatomic) IBOutlet UIButton *submitButton;
+@property (strong, nonatomic) IBOutlet CFMView *view;
 @end
 
+
 @implementation CFMViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self setup];
+}
+
+- (void)setup
+{
+    [self.view setController:self];
+}
+
+- (void)onCreditCardNumberChanged:(NSString *)creditCardNumber
+{
+    
+}
 
 @end

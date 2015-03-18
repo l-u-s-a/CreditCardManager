@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface CFMViewController : UIViewController
-
+- (void) onCreditCardNumberChanged:(NSString *)creditCardNumber;
 @end

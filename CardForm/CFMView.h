@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CFMViewController.h"
 
 @interface CFMView : UIView
-
+- (void)setController:(CFMViewController *)controller;
 @end

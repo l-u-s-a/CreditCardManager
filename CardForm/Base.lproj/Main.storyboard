@@ -35,6 +35,9 @@
                                         <exclude reference="Zij-T9-1XR"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="onCreditCardNumberChanged:" destination="kh9-bI-dsS" eventType="editingChanged" id="ggP-tH-abq"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expiration date:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JLh-cu-9zh">
                                 <rect key="frame" x="16" y="86" width="121" height="21"/>
@@ -121,13 +124,17 @@
                                 <exclude reference="l7h-GN-TvA"/>
                             </mask>
                         </variation>
+                        <connections>
+                            <outlet property="CVVTextField" destination="Yuq-xj-0FS" id="VAt-3n-6A1"/>
+                            <outlet property="creditCardImageView" destination="YBF-pu-7yZ" id="lI5-Dk-k1b"/>
+                            <outlet property="creditCardTextField" destination="2j6-a7-AUL" id="WP9-Ts-O1G"/>
+                            <outlet property="expirationDateTextField" destination="Vni-ai-Hs5" id="sw0-wJ-fGB"/>
+                            <outlet property="submitButton" destination="tOc-Yk-XJX" id="JJc-Zk-u4s"/>
+                        </connections>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
-                        <outlet property="CVVTextField" destination="Yuq-xj-0FS" id="35v-9L-XxK"/>
-                        <outlet property="creditCardImageView" destination="YBF-pu-7yZ" id="7b5-tn-HNW"/>
-                        <outlet property="expirationDateTextField" destination="Vni-ai-Hs5" id="4pM-EM-Ynk"/>
-                        <outlet property="submitButton" destination="tOc-Yk-XJX" id="kno-np-5hu"/>
+                        <outlet property="view" destination="kh9-bI-dsS" id="CWe-jc-0IG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
