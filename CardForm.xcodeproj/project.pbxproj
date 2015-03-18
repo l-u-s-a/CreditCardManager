@@ -1,0 +1,514 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3D6A170A32D872A6BB204CA1 /* libPods-CardFormTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 585C95D6C1BFDC8845773C98 /* libPods-CardFormTests.a */; };
+		A10C5ED61AB9D9B10083DD42 /* CFMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A10C5ED51AB9D9B10083DD42 /* CFMViewController.m */; };
+		A1C4DAD01AB9D5D9004C42DF /* SampleTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A1C4DACF1AB9D5D9004C42DF /* SampleTest.m */; };
+		A1F94FC21AB9D2A3002004F5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F94FC11AB9D2A3002004F5 /* main.m */; };
+		A1F94FC51AB9D2A3002004F5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F94FC41AB9D2A3002004F5 /* AppDelegate.m */; };
+		A1F94FC81AB9D2A3002004F5 /* CardForm.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A1F94FC61AB9D2A3002004F5 /* CardForm.xcdatamodeld */; };
+		A1F94FCE1AB9D2A3002004F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1F94FCC1AB9D2A3002004F5 /* Main.storyboard */; };
+		A1F94FD01AB9D2A3002004F5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1F94FCF1AB9D2A3002004F5 /* Images.xcassets */; };
+		A1F94FD31AB9D2A3002004F5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1F94FD11AB9D2A3002004F5 /* LaunchScreen.xib */; };
+		A1F94FDF1AB9D2A3002004F5 /* CardFormTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F94FDE1AB9D2A3002004F5 /* CardFormTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A1F94FD91AB9D2A3002004F5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A1F94FB41AB9D2A3002004F5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A1F94FBB1AB9D2A3002004F5;
+			remoteInfo = CardForm;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0AD5081898F43A22DF834351 /* Pods-CardFormTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CardFormTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CardFormTests/Pods-CardFormTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3778A952B4A6C4F651886DC6 /* Pods-CardFormTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CardFormTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CardFormTests/Pods-CardFormTests.release.xcconfig"; sourceTree = "<group>"; };
+		585C95D6C1BFDC8845773C98 /* libPods-CardFormTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CardFormTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A10C5ED41AB9D9B10083DD42 /* CFMViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFMViewController.h; sourceTree = SOURCE_ROOT; };
+		A10C5ED51AB9D9B10083DD42 /* CFMViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFMViewController.m; sourceTree = SOURCE_ROOT; };
+		A1C4DACF1AB9D5D9004C42DF /* SampleTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SampleTest.m; path = CardFormTests/SampleTest.m; sourceTree = "<group>"; };
+		A1F94FBC1AB9D2A3002004F5 /* CardForm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardForm.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1F94FC01AB9D2A3002004F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1F94FC11AB9D2A3002004F5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A1F94FC31AB9D2A3002004F5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A1F94FC41AB9D2A3002004F5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A1F94FC71AB9D2A3002004F5 /* CardForm.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CardForm.xcdatamodel; sourceTree = "<group>"; };
+		A1F94FCD1AB9D2A3002004F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A1F94FCF1AB9D2A3002004F5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		A1F94FD21AB9D2A3002004F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		A1F94FD81AB9D2A3002004F5 /* CardFormTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CardFormTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1F94FDD1AB9D2A3002004F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1F94FDE1AB9D2A3002004F5 /* CardFormTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CardFormTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A1F94FB91AB9D2A3002004F5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1F94FD51AB9D2A3002004F5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D6A170A32D872A6BB204CA1 /* libPods-CardFormTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		34DA53DFC47032E963BC0530 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				585C95D6C1BFDC8845773C98 /* libPods-CardFormTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		957643193E1916249E74A8D4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0AD5081898F43A22DF834351 /* Pods-CardFormTests.debug.xcconfig */,
+				3778A952B4A6C4F651886DC6 /* Pods-CardFormTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A1F94FB31AB9D2A3002004F5 = {
+			isa = PBXGroup;
+			children = (
+				A1C4DACF1AB9D5D9004C42DF /* SampleTest.m */,
+				A1F94FBE1AB9D2A3002004F5 /* CardForm */,
+				A1F94FDB1AB9D2A3002004F5 /* CardFormTests */,
+				A1F94FBD1AB9D2A3002004F5 /* Products */,
+				957643193E1916249E74A8D4 /* Pods */,
+				34DA53DFC47032E963BC0530 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		A1F94FBD1AB9D2A3002004F5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A1F94FBC1AB9D2A3002004F5 /* CardForm.app */,
+				A1F94FD81AB9D2A3002004F5 /* CardFormTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A1F94FBE1AB9D2A3002004F5 /* CardForm */ = {
+			isa = PBXGroup;
+			children = (
+				A1F94FCC1AB9D2A3002004F5 /* Main.storyboard */,
+				A10C5ED41AB9D9B10083DD42 /* CFMViewController.h */,
+				A10C5ED51AB9D9B10083DD42 /* CFMViewController.m */,
+				A1F94FCF1AB9D2A3002004F5 /* Images.xcassets */,
+				A1F94FD11AB9D2A3002004F5 /* LaunchScreen.xib */,
+				A1F94FC61AB9D2A3002004F5 /* CardForm.xcdatamodeld */,
+				A1F94FBF1AB9D2A3002004F5 /* Supporting Files */,
+			);
+			path = CardForm;
+			sourceTree = "<group>";
+		};
+		A1F94FBF1AB9D2A3002004F5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A1F94FC31AB9D2A3002004F5 /* AppDelegate.h */,
+				A1F94FC41AB9D2A3002004F5 /* AppDelegate.m */,
+				A1F94FC01AB9D2A3002004F5 /* Info.plist */,
+				A1F94FC11AB9D2A3002004F5 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A1F94FDB1AB9D2A3002004F5 /* CardFormTests */ = {
+			isa = PBXGroup;
+			children = (
+				A1F94FDE1AB9D2A3002004F5 /* CardFormTests.m */,
+				A1F94FDC1AB9D2A3002004F5 /* Supporting Files */,
+			);
+			path = CardFormTests;
+			sourceTree = "<group>";
+		};
+		A1F94FDC1AB9D2A3002004F5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A1F94FDD1AB9D2A3002004F5 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A1F94FBB1AB9D2A3002004F5 /* CardForm */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A1F94FE21AB9D2A3002004F5 /* Build configuration list for PBXNativeTarget "CardForm" */;
+			buildPhases = (
+				A1F94FB81AB9D2A3002004F5 /* Sources */,
+				A1F94FB91AB9D2A3002004F5 /* Frameworks */,
+				A1F94FBA1AB9D2A3002004F5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CardForm;
+			productName = CardForm;
+			productReference = A1F94FBC1AB9D2A3002004F5 /* CardForm.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A1F94FD71AB9D2A3002004F5 /* CardFormTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A1F94FE51AB9D2A3002004F5 /* Build configuration list for PBXNativeTarget "CardFormTests" */;
+			buildPhases = (
+				79F789A60D36C65294E41533 /* Check Pods Manifest.lock */,
+				A1F94FD41AB9D2A3002004F5 /* Sources */,
+				A1F94FD51AB9D2A3002004F5 /* Frameworks */,
+				A1F94FD61AB9D2A3002004F5 /* Resources */,
+				A50AC340826B5D7A986E3385 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A1F94FDA1AB9D2A3002004F5 /* PBXTargetDependency */,
+			);
+			name = CardFormTests;
+			productName = CardFormTests;
+			productReference = A1F94FD81AB9D2A3002004F5 /* CardFormTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A1F94FB41AB9D2A3002004F5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = CFM;
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = "Luka Usalj";
+				TargetAttributes = {
+					A1F94FBB1AB9D2A3002004F5 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					A1F94FD71AB9D2A3002004F5 = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = A1F94FBB1AB9D2A3002004F5;
+					};
+				};
+			};
+			buildConfigurationList = A1F94FB71AB9D2A3002004F5 /* Build configuration list for PBXProject "CardForm" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A1F94FB31AB9D2A3002004F5;
+			productRefGroup = A1F94FBD1AB9D2A3002004F5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A1F94FBB1AB9D2A3002004F5 /* CardForm */,
+				A1F94FD71AB9D2A3002004F5 /* CardFormTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A1F94FBA1AB9D2A3002004F5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1F94FCE1AB9D2A3002004F5 /* Main.storyboard in Resources */,
+				A1F94FD31AB9D2A3002004F5 /* LaunchScreen.xib in Resources */,
+				A1F94FD01AB9D2A3002004F5 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1F94FD61AB9D2A3002004F5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		79F789A60D36C65294E41533 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A50AC340826B5D7A986E3385 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CardFormTests/Pods-CardFormTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A1F94FB81AB9D2A3002004F5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1F94FC51AB9D2A3002004F5 /* AppDelegate.m in Sources */,
+				A1F94FC21AB9D2A3002004F5 /* main.m in Sources */,
+				A1F94FC81AB9D2A3002004F5 /* CardForm.xcdatamodeld in Sources */,
+				A10C5ED61AB9D9B10083DD42 /* CFMViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1F94FD41AB9D2A3002004F5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1F94FDF1AB9D2A3002004F5 /* CardFormTests.m in Sources */,
+				A1C4DAD01AB9D5D9004C42DF /* SampleTest.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A1F94FDA1AB9D2A3002004F5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A1F94FBB1AB9D2A3002004F5 /* CardForm */;
+			targetProxy = A1F94FD91AB9D2A3002004F5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A1F94FCC1AB9D2A3002004F5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A1F94FCD1AB9D2A3002004F5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A1F94FD11AB9D2A3002004F5 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A1F94FD21AB9D2A3002004F5 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A1F94FE01AB9D2A3002004F5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		A1F94FE11AB9D2A3002004F5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A1F94FE31AB9D2A3002004F5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = CardForm/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A1F94FE41AB9D2A3002004F5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = CardForm/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		A1F94FE61AB9D2A3002004F5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0AD5081898F43A22DF834351 /* Pods-CardFormTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = CardFormTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CardForm.app/CardForm";
+			};
+			name = Debug;
+		};
+		A1F94FE71AB9D2A3002004F5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3778A952B4A6C4F651886DC6 /* Pods-CardFormTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = CardFormTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CardForm.app/CardForm";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A1F94FB71AB9D2A3002004F5 /* Build configuration list for PBXProject "CardForm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1F94FE01AB9D2A3002004F5 /* Debug */,
+				A1F94FE11AB9D2A3002004F5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A1F94FE21AB9D2A3002004F5 /* Build configuration list for PBXNativeTarget "CardForm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1F94FE31AB9D2A3002004F5 /* Debug */,
+				A1F94FE41AB9D2A3002004F5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A1F94FE51AB9D2A3002004F5 /* Build configuration list for PBXNativeTarget "CardFormTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1F94FE61AB9D2A3002004F5 /* Debug */,
+				A1F94FE71AB9D2A3002004F5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A1F94FC61AB9D2A3002004F5 /* CardForm.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A1F94FC71AB9D2A3002004F5 /* CardForm.xcdatamodel */,
+			);
+			currentVersion = A1F94FC71AB9D2A3002004F5 /* CardForm.xcdatamodel */;
+			path = CardForm.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = A1F94FB41AB9D2A3002004F5 /* Project object */;
+}
