@@ -30,4 +30,15 @@
     _controller = controller;
 }
 
+- (void)disableCreditCardNumberInput
+{
+}
+
+- (IBAction)onSaveButtonClick:(UIButton *)sender {
+    NSString *cardNumber = self.creditCardTextField.text;
+    NSString *expirationDate = self.expirationDateTextField.text;
+    NSString *CVV = self.CVVTextField.text;
+    [self.controller saveCardWithNumber:cardNumber expirationDate: expirationDate CVV:CVV];
+}
+
 @end

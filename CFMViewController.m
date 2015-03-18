@@ -11,6 +11,7 @@
 
 @interface CFMViewController()
 @property (strong, nonatomic) IBOutlet CFMView *view;
+
 @end
 
 
@@ -28,7 +29,20 @@
 
 - (void)onCreditCardNumberChanged:(NSString *)creditCardNumber
 {
-    
+    if (creditCardNumber.length == 6) {
+        NSString *creditCardType = [self creditCardTypeForNumber:creditCardNumber];
+        if (!creditCardType) {
+            [self.view disableCreditCardNumberInput];
+        } else {
+            UIImage *imageLogo = [UIImage imageNamed:creditCardType];
+            [self.view setCardLogo:imageLogo];
+        }
+    }
+}
+
+- (NSString *)creditCardTypeForNumber:(NSString *)creditCardNumber
+{
+    return nil;
 }
 
 @end

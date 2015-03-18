@@ -11,4 +11,5 @@
 
 @interface CFMView : UIView
 - (void)setController:(CFMViewController *)controller;
+- (void)disableCreditCardNumberInput;
 @end
