@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3D6A170A32D872A6BB204CA1 /* libPods-CardFormTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 585C95D6C1BFDC8845773C98 /* libPods-CardFormTests.a */; };
 		A10C5ED61AB9D9B10083DD42 /* CFMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A10C5ED51AB9D9B10083DD42 /* CFMViewController.m */; };
+		A10C5ED91AB9E8AC0083DD42 /* CFMView.m in Sources */ = {isa = PBXBuildFile; fileRef = A10C5ED81AB9E8AC0083DD42 /* CFMView.m */; };
 		A1C4DAD01AB9D5D9004C42DF /* SampleTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A1C4DACF1AB9D5D9004C42DF /* SampleTest.m */; };
 		A1F94FC21AB9D2A3002004F5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F94FC11AB9D2A3002004F5 /* main.m */; };
 		A1F94FC51AB9D2A3002004F5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F94FC41AB9D2A3002004F5 /* AppDelegate.m */; };
@@ -35,6 +36,8 @@
 		585C95D6C1BFDC8845773C98 /* libPods-CardFormTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CardFormTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A10C5ED41AB9D9B10083DD42 /* CFMViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFMViewController.h; sourceTree = SOURCE_ROOT; };
 		A10C5ED51AB9D9B10083DD42 /* CFMViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFMViewController.m; sourceTree = SOURCE_ROOT; };
+		A10C5ED71AB9E8AC0083DD42 /* CFMView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFMView.h; sourceTree = "<group>"; };
+		A10C5ED81AB9E8AC0083DD42 /* CFMView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFMView.m; sourceTree = "<group>"; };
 		A1C4DACF1AB9D5D9004C42DF /* SampleTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SampleTest.m; path = CardFormTests/SampleTest.m; sourceTree = "<group>"; };
 		A1F94FBC1AB9D2A3002004F5 /* CardForm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardForm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1F94FC01AB9D2A3002004F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -111,6 +114,8 @@
 			isa = PBXGroup;
 			children = (
 				A1F94FCC1AB9D2A3002004F5 /* Main.storyboard */,
+				A10C5ED71AB9E8AC0083DD42 /* CFMView.h */,
+				A10C5ED81AB9E8AC0083DD42 /* CFMView.m */,
 				A10C5ED41AB9D9B10083DD42 /* CFMViewController.h */,
 				A10C5ED51AB9D9B10083DD42 /* CFMViewController.m */,
 				A1F94FCF1AB9D2A3002004F5 /* Images.xcassets */,
@@ -286,6 +291,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1F94FC51AB9D2A3002004F5 /* AppDelegate.m in Sources */,
+				A10C5ED91AB9E8AC0083DD42 /* CFMView.m in Sources */,
 				A1F94FC21AB9D2A3002004F5 /* main.m in Sources */,
 				A1F94FC81AB9D2A3002004F5 /* CardForm.xcdatamodeld in Sources */,
 				A10C5ED61AB9D9B10083DD42 /* CFMViewController.m in Sources */,
