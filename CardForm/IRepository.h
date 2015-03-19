@@ -8,11 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-
-#import "CreditCard.h"
+#import "CFMCreditCard.h"
 
 @protocol IRepository <NSObject>
-- (void)addCard:(CreditCard *)creditCard;
-- (void)removeCard:(CreditCard *)creditCard;
+- (void)addCard:(CFMCreditCard *)creditCard;
+- (void)removeCard:(CFMCreditCard *)creditCard;
 - (NSArray *)getAllCards;
 @end

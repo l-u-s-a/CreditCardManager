@@ -10,6 +10,10 @@
 #import "CFMViewController.h"
 
 @interface CFMView : UIView
+@property (nonatomic, strong) NSString *cardNumber;
+@property (nonatomic, strong) NSString *expirationDate;
+@property (nonatomic, strong) NSString *CVVNumber;
 - (void)setController:(CFMViewController *)controller;
 - (void)disableCreditCardNumberInput;
+- (void)setCardLogo:(UIImage *)cardLogo;
 @end

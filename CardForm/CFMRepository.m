@@ -8,20 +8,31 @@
 
 #import "CFMRepository.h"
 
+@interface CFMRepository()
+@property (nonatomic, strong) NSMutableArray *cards;
+@end
+
 @implementation CFMRepository
 
-- (void)addCard:(id)creditCard
+- (void)addCard:(CFMRepository *)creditCard
 {
-
+    [self.cards addObject:creditCard];
 }
 
-- (void)removeCard:(id)creditCard
+- (void)removeCard:(CFMRepository *)creditCard
 {
-    
+    [self.cards removeObject:creditCard];
 }
 
 - (NSArray *)getAllCards
 {
-    return nil;
+    return self.cards; //return READ-ONLY array
 }
+
+- (NSMutableArray *)cards
+{
+    if (!_cards) _cards = [[NSMutableArray alloc] init];
+    return _cards;
+}
+
 @end

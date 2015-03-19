@@ -9,7 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface CFMViewController : UIViewController
-- (void) onCreditCardNumberChanged:(NSString *)creditCardNumber;
-- (void)saveCardWithNumber:(NSString *)cardNumber expirationDate:(NSString *)expirationDate CVV:(NSString *)CVV;
 
 @end

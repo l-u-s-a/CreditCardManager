@@ -8,10 +8,11 @@
 
 #import "CFMViewController.h"
 #import "CFMView.h"
+#import "CFMRepositoryProvider.h"
+#import "CFMCreditCard.h"
 
 @interface CFMViewController()
 @property (strong, nonatomic) IBOutlet CFMView *view;
-
 @end
 
 
@@ -27,10 +28,11 @@
     [self.view setController:self];
 }
 
-- (void)onCreditCardNumberChanged:(NSString *)creditCardNumber
-{
+
+- (IBAction)creditCardNumberChanged:(UITextField *)sender {
+    NSString *creditCardNumber = sender.text;
     if (creditCardNumber.length == 6) {
-        NSString *creditCardType = [self creditCardTypeForNumber:creditCardNumber];
+        NSString *creditCardType = [CFMCreditCard typeForCardNumber:creditCardNumber];
         if (!creditCardType) {
             [self.view disableCreditCardNumberInput];
         } else {
@@ -40,9 +42,21 @@
     }
 }
 
-- (NSString *)creditCardTypeForNumber:(NSString *)creditCardNumber
-{
-    return nil;
+- (IBAction)saveButtonPressed:(UIButton *)sender {
+    NSString *cardNumber = self.view.cardNumber;
+    NSString *expirationDate = self.view.expirationDate;
+    NSString *CVVNumber = self.view.CVVNumber;
+    
+    if ([CFMCreditCard isValidForCardNumber:cardNumber
+                             expirationDate:expirationDate
+                                  CVVNumber:CVVNumber]) {
+        CFMCreditCard *creditCard = [[CFMCreditCard alloc] initWithCardNumber:cardNumber expirationDate:expirationDate CVVNumber:CVVNumber];
+        [[CFMRepositoryProvider getRepository] addCard:creditCard];
+    } else {
+        //
+    }
 }
+
+
 
 @end

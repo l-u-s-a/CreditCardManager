@@ -20,10 +20,36 @@
 
 @implementation CFMView
 
-- (IBAction)onCreditCardNumberChanged:(UITextField *)sender {
-    NSString *creditCardNumber = sender.text;
-    [self.controller onCreditCardNumberChanged:creditCardNumber];
+- (void)setCardNumber:(NSString *)cardNumber
+{
+    self.creditCardTextField.text = cardNumber;
 }
+
+- (NSString *)cardNumber
+{
+    return self.creditCardTextField.text;
+}
+
+- (void)setExpirationDate:(NSString *)expirationDate
+{
+    self.expirationDateTextField.text = expirationDate;
+}
+
+- (NSString *)expirationDate
+{
+    return self.expirationDateTextField.text;
+}
+
+- (void)setCVVNumber:(NSString *)CVVNumber
+{
+    self.CVVTextField.text = CVVNumber;
+}
+
+- (NSString *)CVVNumber
+{
+    return self.CVVTextField.text;
+}
+
 
 - (void)setController:(CFMViewController *)controller
 {
@@ -32,13 +58,14 @@
 
 - (void)disableCreditCardNumberInput
 {
+//    self.creditCardTextField.
 }
 
-- (IBAction)onSaveButtonClick:(UIButton *)sender {
-    NSString *cardNumber = self.creditCardTextField.text;
-    NSString *expirationDate = self.expirationDateTextField.text;
-    NSString *CVV = self.CVVTextField.text;
-    [self.controller saveCardWithNumber:cardNumber expirationDate: expirationDate CVV:CVV];
+- (void)setCardLogo:(UIImage *)cardLogo
+{
+    self.creditCardImageView.image = cardLogo;
 }
+
+
 
 @end
