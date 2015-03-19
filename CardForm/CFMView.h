@@ -13,6 +13,7 @@
 @property (nonatomic, strong) NSString *cardNumber;
 @property (nonatomic, strong) NSString *expirationDate;
 @property (nonatomic, strong) NSString *CVVNumber;
+@property (nonatomic, strong) UIImage *cardLogo;
 - (void)setController:(CFMViewController *)controller;
 - (void)disableCreditCardNumberInput;
 - (void)setCardLogo:(UIImage *)cardLogo;

@@ -10,6 +10,7 @@
 #import "CFMView.h"
 #import "CFMRepositoryProvider.h"
 #import "CFMCreditCard.h"
+#import "Luhn.h"
 
 @interface CFMViewController()
 @property (strong, nonatomic) IBOutlet CFMView *view;
@@ -31,16 +32,16 @@
 
 - (IBAction)creditCardNumberChanged:(UITextField *)sender {
     NSString *creditCardNumber = sender.text;
-    if (creditCardNumber.length == 6) {
-        NSString *creditCardType = [CFMCreditCard typeForCardNumber:creditCardNumber];
-        if (!creditCardType) {
+//    if (creditCardNumber.length == 6) {
+        OLCreditCardType cardType = [creditCardNumber creditCardType];
+        self.view.cardLogo = [CFMCreditCard imageForCreditCardType:cardType];
+        if (cardType == OLCreditCardTypeUnsupported) {
             [self.view disableCreditCardNumberInput];
-        } else {
-            UIImage *imageLogo = [UIImage imageNamed:creditCardType];
-            [self.view setCardLogo:imageLogo];
         }
-    }
+//    }
 }
+
+
 
 - (IBAction)saveButtonPressed:(UIButton *)sender {
     NSString *cardNumber = self.view.cardNumber;

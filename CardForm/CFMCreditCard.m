@@ -26,8 +26,29 @@
     return false;
 }
 
-+ (NSString *)typeForCardNumber:(NSString *)creditCardNumber
++ (UIImage *)imageForCreditCardType:(OLCreditCardType)creditCardType
 {
-    return @"Amex";
+    NSString *cardName;
+    switch (creditCardType) {
+        case OLCreditCardTypeAmex:
+            cardName = @"Amex";
+            break;
+        case OLCreditCardTypeDiscover:
+            cardName = @"Discover";
+            break;
+        case OLCreditCardTypeJCB:
+            cardName = @"JCB";
+            break;
+        case OLCreditCardTypeMastercard:
+            cardName = @"MasterCard";
+            break;
+        case OLCreditCardTypeVisa:
+            cardName = @"Visa";
+            break;
+        default:
+            cardName = @"GenericCard";
+            break;
+    }
+    return [UIImage imageNamed:cardName];
 }
 @end

@@ -1,10 +1,13 @@
 PODS:
   - Kiwi (2.3.1)
+  - ObjectiveLuhn (1.0.2)
 
 DEPENDENCIES:
   - Kiwi
+  - ObjectiveLuhn
 
 SPEC CHECKSUMS:
   Kiwi: 73e1400209055ee9c8ba78c6012b6b642d0fb9f7
+  ObjectiveLuhn: 668c4c09b679dd944b46f799363a8c0fab319ccc
 
 COCOAPODS: 0.36.0

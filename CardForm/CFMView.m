@@ -50,6 +50,16 @@
     return self.CVVTextField.text;
 }
 
+- (void)setCardLogo:(UIImage *)cardLogo
+{
+    self.creditCardImageView.image = cardLogo;
+}
+
+- (UIImage *)cardLogo
+{
+    return self.creditCardImageView.image;
+}
+
 
 - (void)setController:(CFMViewController *)controller
 {
@@ -59,11 +69,6 @@
 - (void)disableCreditCardNumberInput
 {
 //    self.creditCardTextField.
-}
-
-- (void)setCardLogo:(UIImage *)cardLogo
-{
-    self.creditCardImageView.image = cardLogo;
 }
 
 
