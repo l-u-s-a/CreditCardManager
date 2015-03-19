@@ -7,6 +7,7 @@
 //
 
 #import "CFMView.h"
+#import "CFMCreditCard.h"
 
 @interface CFMView()
 @property (strong, nonatomic) CFMViewController *controller;
@@ -19,6 +20,18 @@
 @end
 
 @implementation CFMView
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    NSString *cardType = [CFMCreditCard typeForCreditCardNumber:textField.text];
+    
+    if (textField.text.length == 6 && [cardType isEqualToString:@"GenericCard"] && ![string isEqualToString:@""]) {
+        textField.text = [textField.text substringToIndex:6];
+        return NO;
+    }
+    return YES;
+}
+
 
 - (void)setCardNumber:(NSString *)cardNumber
 {

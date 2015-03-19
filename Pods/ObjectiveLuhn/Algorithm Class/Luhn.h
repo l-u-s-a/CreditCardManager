@@ -22,8 +22,10 @@ typedef NS_ENUM(NSInteger, OLCreditCardType) {
 @interface Luhn : NSObject
 
 + (OLCreditCardType) typeFromString:(NSString *) string;
-+ (BOOL) validateString:(NSString *) string forType:(OLCreditCardType) type;
-+ (BOOL) validateString:(NSString *) string;
++ (BOOL)validateString:(NSString *) string forType:(OLCreditCardType) type;
++ (BOOL)validateString:(NSString *) string;
++ (BOOL)validateSubString:(NSString *)subString;
+
 
 @end
 

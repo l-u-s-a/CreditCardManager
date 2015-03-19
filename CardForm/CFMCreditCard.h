@@ -18,4 +18,5 @@
 - (instancetype)initWithCardNumber:(NSString *)creditCardNumber expirationDate:(NSString *)expirationDate CVVNumber:(NSString *)CVVNumber;
 + (BOOL)isValidForCardNumber:(NSString *)creditCardNumber expirationDate:(NSString *)expirationDate CVVNumber:(NSString *)CVVNumber;
 + (UIImage *)imageForCreditCardType:(OLCreditCardType)creditCardType;
++ (NSString *)typeForCreditCardNumber:(NSString *)creditCardNumber;
 @end

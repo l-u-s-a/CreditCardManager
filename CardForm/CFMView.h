@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "CFMViewController.h"
 
-@interface CFMView : UIView
+@interface CFMView : UIView <UITextFieldDelegate>
 @property (nonatomic, strong) NSString *cardNumber;
 @property (nonatomic, strong) NSString *expirationDate;
 @property (nonatomic, strong) NSString *CVVNumber;
