@@ -35,22 +35,28 @@
         if ([string isEqualToString:@""]) {
             [self clearCVVField];
             return YES;
-        } else if (self.cardNumber.length == 6 && [self.cardType isEqualToString:@"GenericCard"]) {
+        } else if (self.cardNumber.length == 6 && (!self.cardType)) {
             self.cardNumber = [self.cardNumber substringToIndex:6];
             return NO;
         } else if (([self.cardType isEqualToString:@"Amex"] && self.cardNumber.length == 15 ) || (self.cardNumber.length == 16)) {
             self.cardNumber = [self.cardNumber substringToIndex:self.cardNumber.length];
-            [self CVVEnableIf:YES];
+            [self CVVEnable:YES];
             return NO;
         }
     }
     return YES;
 }
 
+- (IBAction)editingDateEnded:(UITextField *)sender {
+    if (!self.expirationDate) {
+        self.expirationDateTextField.text = @"";
+    }
+}
+
 - (void)clearCVVField
 {
     self.CVVNumber = @"";
-    [self CVVEnableIf:NO];
+    [self CVVEnable:NO];
 }
 
 - (void)setCardNumber:(NSString *)cardNumber
@@ -63,14 +69,12 @@
     return self.creditCardTextField.text;
 }
 
-- (void)setExpirationDate:(NSString *)expirationDate
+- (NSDate *)expirationDate
 {
-    self.expirationDateTextField.text = expirationDate;
-}
-
-- (NSString *)expirationDate
-{
-    return self.expirationDateTextField.text;
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"MM/yy"];
+    NSDate *date = [formatter dateFromString:self.expirationDateTextField.text];
+    return date;
 }
 
 - (void)setCVVNumber:(NSString *)CVVNumber
@@ -83,6 +87,14 @@
     return self.CVVTextField.text;
 }
 
+
+- (void)setCardType:(NSString *)cardType
+{
+    _cardType = cardType;
+    NSString *logoName = (self.cardType) ? self.cardType : @"GenericCard";
+    self.cardLogo = [UIImage imageNamed:logoName];
+}
+
 - (void)setCardLogo:(UIImage *)cardLogo
 {
     self.creditCardImageView.image = cardLogo;
@@ -90,6 +102,7 @@
 
 - (UIImage *)cardLogo
 {
+    
     return self.creditCardImageView.image;
 }
 
@@ -100,9 +113,17 @@
 }
 
 
-- (void)CVVEnableIf:(BOOL)condition
+- (void)CVVEnable:(BOOL)condition
 {
     self.CVVTextField.enabled = condition;
+}
+
+- (void)clearForm
+{
+    [self clearCVVField];
+    self.cardNumber = @"";
+    self.cardType = nil;
+    self.expirationDateTextField.text = @"";
 }
 
 

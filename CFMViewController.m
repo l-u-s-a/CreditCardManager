@@ -40,9 +40,8 @@
 - (IBAction)creditCardNumberChanged:(UITextField *)sender {
     if (self.view.cardNumber.length == 5 || self.view.cardNumber.length == 6) {
         self.view.cardType = [CFMCreditCard typeForCreditCardNumber:self.view.cardNumber];
-        self.view.cardLogo = [UIImage imageNamed:self.view.cardType];
     } else if (([self.view.cardType isEqualToString:@"Amex"] && self.view.cardNumber.length == 15) || self.view.cardNumber.length == 16) {
-        [self.view CVVEnableIf:YES];
+        [self.view CVVEnable:YES];
     }
 }
 
@@ -50,17 +49,29 @@
 
 - (IBAction)saveButtonPressed:(UIButton *)sender {
     NSString *cardNumber = self.view.cardNumber;
-    NSString *expirationDate = self.view.expirationDate;
+    NSString *cardType = self.view.cardType;
+    NSDate *expirationDate = self.view.expirationDate;
     NSString *CVVNumber = self.view.CVVNumber;
     
-    if ([CFMCreditCard isValidForCardNumber:cardNumber
-                             expirationDate:expirationDate
-                                  CVVNumber:CVVNumber]) {
-        CFMCreditCard *creditCard = [[CFMCreditCard alloc] initWithCardNumber:cardNumber expirationDate:expirationDate CVVNumber:CVVNumber];
+    CFMCreditCard *creditCard = [[CFMCreditCard alloc] initWithCardNumber:cardNumber cardType:cardType expirationDate:expirationDate CVVNumber:CVVNumber];
+    
+    if (creditCard.isValid) {
+        [self showMessageSuccess];
         [[CFMRepositoryProvider getRepository] addCard:creditCard];
+        [self.view clearForm];
     } else {
-        //
+        [self showMessageWithErrorDescription:[creditCard errorMessage]];
     }
+}
+
+- (void)showMessageSuccess
+{
+    [[[UIAlertView alloc] initWithTitle:@"Validated!" message:@"Credit card number seems ok!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+}
+
+- (void)showMessageWithErrorDescription:(NSString *)errorDescription
+{
+    [[[UIAlertView alloc] initWithTitle:@"Error" message:errorDescription delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
 }
 
 

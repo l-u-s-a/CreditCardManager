@@ -13,10 +13,12 @@
 
 @interface CFMCreditCard : NSObject
 @property (nonatomic, strong) NSString *creditCardNumber;
-@property (nonatomic, strong) NSString *expirationDate;
+@property (nonatomic, strong) NSString *creditCardType;
+@property (nonatomic, strong) NSDate *expirationDate;
 @property (nonatomic, strong) NSString *CVVNumber;
-- (instancetype)initWithCardNumber:(NSString *)creditCardNumber expirationDate:(NSString *)expirationDate CVVNumber:(NSString *)CVVNumber;
-+ (BOOL)isValidForCardNumber:(NSString *)creditCardNumber expirationDate:(NSString *)expirationDate CVVNumber:(NSString *)CVVNumber;
-+ (UIImage *)imageForCreditCardType:(OLCreditCardType)creditCardType;
+@property (nonatomic, assign, getter=isValid) BOOL valid;
+- (instancetype)initWithCardNumber:(NSString *)creditCardNumber cardType:(NSString *)creditCardType expirationDate:(NSDate *)expirationDate CVVNumber:(NSString *)CVVNumber;
+- (NSString *)errorMessage;
 + (NSString *)typeForCreditCardNumber:(NSString *)creditCardNumber;
++ (BOOL)isValidForCardNumber:(NSString *)cardNumber;
 @end

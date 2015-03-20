@@ -50,6 +50,9 @@
                                 <rect key="frame" x="16" y="130" width="115" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="editingDateEnded:" destination="kh9-bI-dsS" eventType="editingDidEnd" id="FNC-hd-Xy0"/>
+                                </connections>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GenericCard" translatesAutoresizingMaskIntoConstraints="NO" id="YBF-pu-7yZ">
                                 <rect key="frame" x="276" y="61" width="28" height="19"/>

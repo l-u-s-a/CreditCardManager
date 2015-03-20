@@ -26,7 +26,7 @@
 
 - (NSArray *)getAllCards
 {
-    return self.cards; //return READ-ONLY array
+    return [self.cards copy]; 
 }
 
 - (NSMutableArray *)cards

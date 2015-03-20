@@ -11,46 +11,52 @@
 
 @implementation CFMCreditCard
 
-- (instancetype)initWithCardNumber:(NSString *)creditCardNumber expirationDate:(NSString *)expirationDate CVVNumber:(NSString *)CVVNumber
+- (instancetype)initWithCardNumber:(NSString *)creditCardNumber cardType:(NSString *)creditCardType expirationDate:(NSDate *)expirationDate CVVNumber:(NSString *)CVVNumber
 {
     self = [super init];
     if (self) {
         self.creditCardNumber = creditCardNumber;
+        self.creditCardType = creditCardType;
         self.expirationDate = expirationDate;
         self.CVVNumber = CVVNumber;
     }
     return self;
 }
 
-+ (BOOL)isValidForCardNumber:(NSString *)creditCardNumber expirationDate:(NSString *)expirationDate CVVNumber:(NSString *)CVVNumber
+- (NSString *)errorMessage
 {
-    return false;
+    if (self.creditCardNumber.length == 0) {
+        return @"Please enter credit card number";
+    } else if (![CFMCreditCard isValidForCardNumber:self.creditCardNumber]) {
+        return @"Invalid card number";
+    } else if ([self.creditCardType isEqualToString:@"Amex"]) {
+        if (self.creditCardNumber.length != 15) {
+            return @"Amex card must have 15 digits";
+        } else if (self.CVVNumber.length != 4) {
+            return @"CVV number must have 4 digits";
+        }
+    } else if (self.creditCardNumber.length != 16) {
+        return [NSString stringWithFormat:@"%@ must have 16 digits", self.creditCardType];
+    } else if (!self.expirationDate) {
+        return @"Please enter credit card expiration date";
+    } else if ([self.expirationDate compare:[NSDate date]] == NSOrderedAscending) {
+        return @"Oops! Your card seems to be out of date!";
+    } else if (self.CVVNumber.length == 0) {
+        return @"Please enter CVV number";
+    }else if (self.CVVNumber.length != 3) {
+        return [NSString stringWithFormat:@"%@ has 3-digit CVV", self.creditCardType];
+    }
+    return nil;
 }
 
-+ (UIImage *)imageForCreditCardType:(OLCreditCardType)creditCardType
+- (BOOL)isValid
 {
-    NSString *cardName;
-    switch (creditCardType) {
-        case OLCreditCardTypeAmex:
-            cardName = @"Amex";
-            break;
-        case OLCreditCardTypeDiscover:
-            cardName = @"Discover";
-            break;
-        case OLCreditCardTypeJCB:
-            cardName = @"JCB";
-            break;
-        case OLCreditCardTypeMastercard:
-            cardName = @"MasterCard";
-            break;
-        case OLCreditCardTypeVisa:
-            cardName = @"Visa";
-            break;
-        default:
-            cardName = @"GenericCard";
-            break;
-    }
-    return [UIImage imageNamed:cardName];
+    return ![self errorMessage];
+}
+
++ (BOOL)isValidForCardNumber:(NSString *)cardNumber
+{
+    return [Luhn validateString:cardNumber];
 }
 
 + (NSString *)typeForCreditCardNumber:(NSString *)creditCardNumber
@@ -70,7 +76,7 @@
     } else if (cardNumber >= 400000 && cardNumber < 500000) {
             return @"Visa";
     } else {
-        return @"GenericCard";
+        return nil;
     }
 }
 

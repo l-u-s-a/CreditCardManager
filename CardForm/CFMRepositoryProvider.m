@@ -14,7 +14,7 @@ static id<IRepository> repository;
 @implementation CFMRepositoryProvider
 
 
-+ (id<IRepository>)getRepository
++ (id <IRepository>)getRepository
 {
     if (!repository) repository = [[CFMRepository alloc] init];
     return repository;

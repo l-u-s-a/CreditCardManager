@@ -11,11 +11,12 @@
 
 @interface CFMView : UIView <UITextFieldDelegate>
 @property (nonatomic, strong) NSString *cardNumber;
-@property (nonatomic, strong) NSString *expirationDate;
+@property (nonatomic, strong) NSDate *expirationDate;
 @property (nonatomic, strong) NSString *CVVNumber;
 @property (nonatomic, strong) UIImage *cardLogo;
 @property (nonatomic, strong) NSString *cardType;
 - (void)setController:(CFMViewController *)controller;
 - (void)setCardLogo:(UIImage *)cardLogo;
-- (void)CVVEnableIf:(BOOL)condition;
+- (void)CVVEnable:(BOOL)condition;
+- (void)clearForm;
 @end
