@@ -21,19 +21,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setup];
-}
-
-- (void)setup
-{
-    [self.view setController:self];
-}
-
-- (IBAction)CVVEditingStarted:(UITextField *)sender {
-    self.view.cardLogo = [UIImage imageNamed:@"CVV"];
-}
-- (IBAction)CVVEditingEnded:(UITextField *)sender {
-    self.view.cardLogo = [UIImage imageNamed:self.view.cardType];
 }
 
 
@@ -44,7 +31,6 @@
         [self.view CVVEnable:YES];
     }
 }
-
 
 
 - (IBAction)saveButtonPressed:(UIButton *)sender {
@@ -73,7 +59,5 @@
 {
     [[[UIAlertView alloc] initWithTitle:@"Error" message:errorDescription delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
 }
-
-
 
 @end

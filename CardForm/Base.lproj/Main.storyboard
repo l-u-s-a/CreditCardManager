@@ -83,8 +83,8 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <action selector="CVVEditingEnded:" destination="vXZ-lx-hvc" eventType="editingDidEnd" id="TP5-og-9DQ"/>
-                                    <action selector="CVVEditingStarted:" destination="vXZ-lx-hvc" eventType="editingDidBegin" id="eeB-ff-LrS"/>
+                                    <action selector="editingCVVEnded:" destination="kh9-bI-dsS" eventType="editingDidEnd" id="i1I-v7-Pvt"/>
+                                    <action selector="editingCVVStarted:" destination="kh9-bI-dsS" eventType="editingDidBegin" id="vwA-91-oeF"/>
                                     <outlet property="delegate" destination="kh9-bI-dsS" id="oQC-iZ-nxC"/>
                                 </connections>
                             </textField>

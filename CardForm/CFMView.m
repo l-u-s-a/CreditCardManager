@@ -76,6 +76,14 @@
     NSDate *date = [formatter dateFromString:self.expirationDateTextField.text];
     return date;
 }
+- (IBAction)editingCVVStarted:(UITextField *)sender {
+    self.cardLogo = [UIImage imageNamed:@"CVV"];
+}
+
+- (IBAction)editingCVVEnded:(UITextField *)sender {
+    self.cardLogo = [UIImage imageNamed:self.cardType];
+}
+
 
 - (void)setCVVNumber:(NSString *)CVVNumber
 {
