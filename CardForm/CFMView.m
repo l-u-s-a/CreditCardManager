@@ -10,7 +10,6 @@
 #import "CFMCreditCard.h"
 
 @interface CFMView()
-@property (strong, nonatomic) CFMViewController *controller;
 @property (strong, nonatomic) IBOutlet UITextField *creditCardTextField;
 @property (strong, nonatomic) IBOutlet UITextField *expirationDateTextField;
 @property (strong, nonatomic) IBOutlet UITextField *CVVTextField;
@@ -47,7 +46,8 @@
     return YES;
 }
 
-- (IBAction)editingDateEnded:(UITextField *)sender {
+- (IBAction)editingDateEnded:(UITextField *)sender
+{
     if (!self.expirationDate) {
         self.expirationDateTextField.text = @"";
     }
@@ -76,17 +76,19 @@
     NSDate *date = [formatter dateFromString:self.expirationDateTextField.text];
     return date;
 }
-- (IBAction)editingCVVStarted:(UITextField *)sender {
+
+- (IBAction)editingCVVStarted:(UITextField *)sender
+{
     self.cardLogo = [UIImage imageNamed:@"CVV"];
 }
 
-- (IBAction)editingCVVEnded:(UITextField *)sender {
+- (IBAction)editingCVVEnded:(UITextField *)sender
+{
     self.cardLogo = [UIImage imageNamed:self.cardType];
 }
 
 
-- (void)setCVVNumber:(NSString *)CVVNumber
-{
+- (void)setCVVNumber:(NSString *)CVVNumber {
     self.CVVTextField.text = CVVNumber;
 }
 
@@ -94,7 +96,6 @@
 {
     return self.CVVTextField.text;
 }
-
 
 - (void)setCardType:(NSString *)cardType
 {
@@ -114,13 +115,6 @@
     return self.creditCardImageView.image;
 }
 
-
-- (void)setController:(CFMViewController *)controller
-{
-    _controller = controller;
-}
-
-
 - (void)CVVEnable:(BOOL)condition
 {
     self.CVVTextField.enabled = condition;
@@ -133,6 +127,5 @@
     self.cardType = nil;
     self.expirationDateTextField.text = @"";
 }
-
 
 @end

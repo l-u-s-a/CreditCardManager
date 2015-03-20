@@ -43,7 +43,7 @@
     
     if (creditCard.isValid) {
         [self showMessageSuccess];
-        [[CFMRepositoryProvider getRepository] addCard:creditCard];
+        [[CFMRepositoryProvider repository] addCard:creditCard];
         [self.view clearForm];
     } else {
         [self showMessageWithErrorDescription:[creditCard errorMessage]];

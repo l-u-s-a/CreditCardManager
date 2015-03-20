@@ -15,7 +15,7 @@
 @property (nonatomic, strong) NSString *CVVNumber;
 @property (nonatomic, strong) UIImage *cardLogo;
 @property (nonatomic, strong) NSString *cardType;
-- (void)setController:(CFMViewController *)controller;
+
 - (void)setCardLogo:(UIImage *)cardLogo;
 - (void)CVVEnable:(BOOL)condition;
 - (void)clearForm;

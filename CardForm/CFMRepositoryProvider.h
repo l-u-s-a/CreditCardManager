@@ -10,5 +10,5 @@
 #import "IRepository.h"
 
 @interface CFMRepositoryProvider : NSObject
-+ (id<IRepository>)getRepository;
++ (id <IRepository>)repository;
 @end

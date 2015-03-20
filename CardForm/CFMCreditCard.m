@@ -43,7 +43,7 @@
         return @"Oops! Your card seems to be out of date!";
     } else if (self.CVVNumber.length == 0) {
         return @"Please enter CVV number";
-    }else if (self.CVVNumber.length != 3) {
+    } else if (self.CVVNumber.length != 3) {
         return [NSString stringWithFormat:@"%@ has 3-digit CVV", self.creditCardType];
     }
     return nil;
@@ -79,6 +79,5 @@
         return nil;
     }
 }
-
 
 @end

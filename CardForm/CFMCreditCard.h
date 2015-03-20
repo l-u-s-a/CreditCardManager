@@ -17,6 +17,7 @@
 @property (nonatomic, strong) NSDate *expirationDate;
 @property (nonatomic, strong) NSString *CVVNumber;
 @property (nonatomic, assign, getter=isValid) BOOL valid;
+
 - (instancetype)initWithCardNumber:(NSString *)creditCardNumber cardType:(NSString *)creditCardType expirationDate:(NSDate *)expirationDate CVVNumber:(NSString *)CVVNumber;
 - (NSString *)errorMessage;
 + (NSString *)typeForCreditCardNumber:(NSString *)creditCardNumber;

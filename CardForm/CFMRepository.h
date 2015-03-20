@@ -6,7 +6,6 @@
 //  Copyright (c) 2015 Luka Usalj. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import "IRepository.h"
 
 @interface CFMRepository : NSObject <IRepository>
