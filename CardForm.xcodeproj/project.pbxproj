@@ -14,14 +14,13 @@
 		A10C5EDD1ABA0D3F0083DD42 /* CFMRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = A10C5EDC1ABA0D3F0083DD42 /* CFMRepository.m */; };
 		A10C5EE21ABA11280083DD42 /* CFMCreditCard.m in Sources */ = {isa = PBXBuildFile; fileRef = A10C5EE11ABA11280083DD42 /* CFMCreditCard.m */; };
 		A10C5EE51ABA14770083DD42 /* CFMRepositoryProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = A10C5EE41ABA14770083DD42 /* CFMRepositoryProvider.m */; };
-		A1C4DAD01AB9D5D9004C42DF /* SampleTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A1C4DACF1AB9D5D9004C42DF /* SampleTest.m */; };
+		A1CF06681ABCC93D00CF028B /* CFMCreditCardTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A1CF06671ABCC93D00CF028B /* CFMCreditCardTest.m */; };
 		A1F94FC21AB9D2A3002004F5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F94FC11AB9D2A3002004F5 /* main.m */; };
 		A1F94FC51AB9D2A3002004F5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F94FC41AB9D2A3002004F5 /* AppDelegate.m */; };
 		A1F94FC81AB9D2A3002004F5 /* CardForm.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A1F94FC61AB9D2A3002004F5 /* CardForm.xcdatamodeld */; };
 		A1F94FCE1AB9D2A3002004F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1F94FCC1AB9D2A3002004F5 /* Main.storyboard */; };
 		A1F94FD01AB9D2A3002004F5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1F94FCF1AB9D2A3002004F5 /* Images.xcassets */; };
 		A1F94FD31AB9D2A3002004F5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1F94FD11AB9D2A3002004F5 /* LaunchScreen.xib */; };
-		A1F94FDF1AB9D2A3002004F5 /* CardFormTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F94FDE1AB9D2A3002004F5 /* CardFormTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +49,7 @@
 		A10C5EE11ABA11280083DD42 /* CFMCreditCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFMCreditCard.m; sourceTree = "<group>"; };
 		A10C5EE31ABA14770083DD42 /* CFMRepositoryProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFMRepositoryProvider.h; sourceTree = "<group>"; };
 		A10C5EE41ABA14770083DD42 /* CFMRepositoryProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFMRepositoryProvider.m; sourceTree = "<group>"; };
-		A1C4DACF1AB9D5D9004C42DF /* SampleTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SampleTest.m; path = CardFormTests/SampleTest.m; sourceTree = "<group>"; };
+		A1CF06671ABCC93D00CF028B /* CFMCreditCardTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFMCreditCardTest.m; sourceTree = "<group>"; };
 		A1F94FBC1AB9D2A3002004F5 /* CardForm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardForm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1F94FC01AB9D2A3002004F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A1F94FC11AB9D2A3002004F5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -62,7 +61,6 @@
 		A1F94FD21AB9D2A3002004F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		A1F94FD81AB9D2A3002004F5 /* CardFormTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CardFormTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1F94FDD1AB9D2A3002004F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A1F94FDE1AB9D2A3002004F5 /* CardFormTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CardFormTests.m; sourceTree = "<group>"; };
 		E20318A1DE03F2CBDB8E5771 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		EA753113E70E4ADF30EC8A5A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -110,7 +108,6 @@
 		A1F94FB31AB9D2A3002004F5 = {
 			isa = PBXGroup;
 			children = (
-				A1C4DACF1AB9D5D9004C42DF /* SampleTest.m */,
 				A1F94FBE1AB9D2A3002004F5 /* CardForm */,
 				A1F94FDB1AB9D2A3002004F5 /* CardFormTests */,
 				A1F94FBD1AB9D2A3002004F5 /* Products */,
@@ -165,7 +162,7 @@
 		A1F94FDB1AB9D2A3002004F5 /* CardFormTests */ = {
 			isa = PBXGroup;
 			children = (
-				A1F94FDE1AB9D2A3002004F5 /* CardFormTests.m */,
+				A1CF06671ABCC93D00CF028B /* CFMCreditCardTest.m */,
 				A1F94FDC1AB9D2A3002004F5 /* Supporting Files */,
 			);
 			path = CardFormTests;
@@ -362,8 +359,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1F94FDF1AB9D2A3002004F5 /* CardFormTests.m in Sources */,
-				A1C4DAD01AB9D5D9004C42DF /* SampleTest.m in Sources */,
+				A1CF06681ABCC93D00CF028B /* CFMCreditCardTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

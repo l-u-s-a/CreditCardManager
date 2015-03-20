@@ -14,4 +14,5 @@
 - (void)addCard:(CFMCreditCard *)creditCard;
 - (void)removeCard:(CFMCreditCard *)creditCard;
 - (NSArray *)getAllCards;
+- (void)removeAllCards;
 @end

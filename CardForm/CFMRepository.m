@@ -29,6 +29,11 @@
     return [self.cards copy]; 
 }
 
+- (void)removeAllCards
+{
+    self.cards = [[NSMutableArray alloc] init];
+}
+
 - (NSMutableArray *)cards
 {
     if (!_cards) _cards = [[NSMutableArray alloc] init];
