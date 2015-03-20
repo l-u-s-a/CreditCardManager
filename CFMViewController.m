@@ -30,19 +30,8 @@
 }
 
 
-- (IBAction)creditCardNumberChanged:(UITextField *)sender {
-    NSString *creditCardNumber = sender.text;
-    if (creditCardNumber.length < 6) {
-        self.view.cardLogo = [UIImage imageNamed:@"GenericCard"];
-    }
-    if (creditCardNumber.length == 6) {
-        NSString *cardType = [CFMCreditCard typeForCreditCardNumber:creditCardNumber];
-        if (![cardType  isEqual: @"GenericCard"]) {
-            self.view.cardLogo = [UIImage imageNamed:cardType];
-        } else {
-            [self.view disableCreditCardNumberInput];
-        }
-    }
+- (IBAction)CVVChanged:(UITextField *)sender {
+    [self.view CVVEnableIf:[Luhn validateString:self.view.cardNumber]];
 }
 
 

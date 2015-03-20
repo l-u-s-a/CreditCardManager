@@ -17,4 +17,5 @@
 - (void)setController:(CFMViewController *)controller;
 - (void)disableCreditCardNumberInput;
 - (void)setCardLogo:(UIImage *)cardLogo;
+- (void)CVVEnableIf:(BOOL)condition;
 @end
