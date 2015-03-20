@@ -80,6 +80,8 @@
                                     </mask>
                                 </variation>
                                 <connections>
+                                    <action selector="CVVEditingEnded:" destination="vXZ-lx-hvc" eventType="editingDidEnd" id="TP5-og-9DQ"/>
+                                    <action selector="CVVEditingStarted:" destination="vXZ-lx-hvc" eventType="editingDidBegin" id="eeB-ff-LrS"/>
                                     <outlet property="delegate" destination="kh9-bI-dsS" id="oQC-iZ-nxC"/>
                                 </connections>
                             </textField>

@@ -26,7 +26,7 @@
         if ([string isEqualToString:@""]) {
             return YES;
         } else if (![self.cardType isEqualToString:@"Amex"] && self.CVVNumber.length == 3) {
-            self.CVVNumber = [self.CVVNumber substringToIndex:4];
+            self.CVVNumber = [self.CVVNumber substringToIndex:3];
             return NO;
         } else if (self.CVVNumber.length == 4) {
             return NO;

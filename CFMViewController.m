@@ -29,10 +29,13 @@
     [self.view setController:self];
 }
 
-
-- (IBAction)CVVChanged:(UITextField *)sender {
-    [self.view CVVEnableIf:[Luhn validateString:self.view.cardNumber]];
+- (IBAction)CVVEditingStarted:(UITextField *)sender {
+    self.view.cardLogo = [UIImage imageNamed:@"CVV"];
 }
+- (IBAction)CVVEditingEnded:(UITextField *)sender {
+    self.view.cardLogo = [UIImage imageNamed:self.view.cardType];
+}
+
 
 - (IBAction)creditCardNumberChanged:(UITextField *)sender {
     if (self.view.cardNumber.length == 5 || self.view.cardNumber.length == 6) {
