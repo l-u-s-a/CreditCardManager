@@ -16,36 +16,42 @@
 @property (strong, nonatomic) IBOutlet UITextField *CVVTextField;
 @property (strong, nonatomic) IBOutlet UIImageView *creditCardImageView;
 @property (strong, nonatomic) IBOutlet UIButton *submitButton;
-
 @end
 
 @implementation CFMView
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
-    NSString *cardType = [CFMCreditCard typeForCreditCardNumber:textField.text];
-    if (self.cardNumber.length == 6 && [cardType isEqualToString:@"GenericCard"] && ![string isEqualToString:@""]) {
-        textField.text = [textField.text substringToIndex:6];
-        return NO;
-    } else if (([cardType isEqualToString:@"Amex"] && self.cardNumber.length == 15 && ![string isEqualToString:@""]) || (self.cardNumber.length == 16 && ![string isEqualToString:@""])) {
-        textField.text = [textField.text substringToIndex:textField.text.length];
-        [self CVVEnableIf:YES];
-        return NO;
+    if (textField == self.CVVTextField) {
+        if ([string isEqualToString:@""]) {
+            return YES;
+        } else if (![self.cardType isEqualToString:@"Amex"] && self.CVVNumber.length == 3) {
+            self.CVVNumber = [self.CVVNumber substringToIndex:4];
+            return NO;
+        } else if (self.CVVNumber.length == 4) {
+            return NO;
+        }
+    } else if (textField == self.creditCardTextField) {
+        if ([string isEqualToString:@""]) {
+            [self clearCVVField];
+            return YES;
+        } else if (self.cardNumber.length == 6 && [self.cardType isEqualToString:@"GenericCard"]) {
+            self.cardNumber = [self.cardNumber substringToIndex:6];
+            return NO;
+        } else if (([self.cardType isEqualToString:@"Amex"] && self.cardNumber.length == 15 ) || (self.cardNumber.length == 16)) {
+            self.cardNumber = [self.cardNumber substringToIndex:self.cardNumber.length];
+            [self CVVEnableIf:YES];
+            return NO;
+        }
     }
-    self.CVVNumber = @"";
-    [self CVVEnableIf:NO];
     return YES;
 }
 
-
-- (IBAction)creditCardNumberChanged:(UITextField *)sender {
-    NSString *cardType = @"GenericCard";
-    if (self.cardNumber.length == 5 || self.cardNumber.length == 6) {
-        cardType = [CFMCreditCard typeForCreditCardNumber:self.cardNumber];
-        self.cardLogo = [UIImage imageNamed:cardType];
-    }
+- (void)clearCVVField
+{
+    self.CVVNumber = @"";
+    [self CVVEnableIf:NO];
 }
-
 
 - (void)setCardNumber:(NSString *)cardNumber
 {
@@ -93,16 +99,11 @@
     _controller = controller;
 }
 
-- (void)disableCreditCardNumberInput
-{
-//    self.creditCardTextField.
-}
 
 - (void)CVVEnableIf:(BOOL)condition
 {
     self.CVVTextField.enabled = condition;
 }
-
 
 
 @end

@@ -34,6 +34,15 @@
     [self.view CVVEnableIf:[Luhn validateString:self.view.cardNumber]];
 }
 
+- (IBAction)creditCardNumberChanged:(UITextField *)sender {
+    if (self.view.cardNumber.length == 5 || self.view.cardNumber.length == 6) {
+        self.view.cardType = [CFMCreditCard typeForCreditCardNumber:self.view.cardNumber];
+        self.view.cardLogo = [UIImage imageNamed:self.view.cardType];
+    } else if (([self.view.cardType isEqualToString:@"Amex"] && self.view.cardNumber.length == 15) || self.view.cardNumber.length == 16) {
+        [self.view CVVEnableIf:YES];
+    }
+}
+
 
 
 - (IBAction)saveButtonPressed:(UIButton *)sender {

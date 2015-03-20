@@ -36,7 +36,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <action selector="creditCardNumberChanged:" destination="kh9-bI-dsS" eventType="editingChanged" id="PRJ-zK-395"/>
+                                    <action selector="creditCardNumberChanged:" destination="vXZ-lx-hvc" eventType="editingChanged" id="nJy-bU-vip"/>
                                     <outlet property="delegate" destination="kh9-bI-dsS" id="82Z-tJ-uID"/>
                                 </connections>
                             </textField>
@@ -79,6 +79,9 @@
                                         <exclude reference="Q5f-mk-Uhv"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <outlet property="delegate" destination="kh9-bI-dsS" id="oQC-iZ-nxC"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tOc-Yk-XJX">
                                 <rect key="frame" x="136" y="242" width="49" height="30"/>
