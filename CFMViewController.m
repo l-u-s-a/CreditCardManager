@@ -21,15 +21,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.view setFocusOnCreditCardNumber];
 }
 
 
 - (IBAction)creditCardNumberChanged:(UITextField *)sender {
-    if (self.view.cardNumber.length == 5 || self.view.cardNumber.length == 6) {
-        self.view.cardType = [CFMCreditCard typeForCreditCardNumber:self.view.cardNumber];
-    } else if (([self.view.cardType isEqualToString:@"Amex"] && self.view.cardNumber.length == 15) || self.view.cardNumber.length == 16) {
-        [self.view CVVEnable:YES];
-    }
+    self.view.cardType = [CFMCreditCard typeForCreditCardNumber:self.view.cardNumber];
 }
 
 
@@ -42,6 +39,7 @@
         [self showMessageSuccess];
         [[CFMRepositoryProvider repository] addCard:creditCard];
         [self.view clearForm];
+        [self.view setFocusOnCreditCardNumber];
     } else {
         [self showMessageWithErrorDescription:[creditCard errorMessage]];
     }

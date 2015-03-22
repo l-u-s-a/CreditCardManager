@@ -11,52 +11,54 @@
 
 @interface CFMView()
 @property (strong, nonatomic) IBOutlet UITextField *creditCardTextField;
-@property (strong, nonatomic) IBOutlet UITextField *expirationDateTextField;
+@property (strong, nonatomic) IBOutlet UITextField *expirationMonthField;
+@property (strong, nonatomic) IBOutlet UITextField *expirationYearField;
 @property (strong, nonatomic) IBOutlet UITextField *CVVTextField;
 @property (strong, nonatomic) IBOutlet UIImageView *creditCardImageView;
 @property (strong, nonatomic) IBOutlet UIButton *submitButton;
+@property (strong, nonatomic) NSString *expirationMonth;
+@property (strong, nonatomic) NSString *expirationYear;
 @end
 
 @implementation CFMView
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
-    if (textField == self.CVVTextField) {
-        if ([string isEqualToString:@""]) {
-            return YES;
-        } else if (![self.cardType isEqualToString:@"Amex"] && self.CVVNumber.length == 3) {
+    if ([string isEqualToString:@""]) {
+        if (textField.text.length == 1) textField.text = @"";
+    
+    } else if (textField == self.CVVTextField) {
+        if (![self.cardType isEqualToString:@"Amex"] && self.CVVNumber.length == 3) {
             self.CVVNumber = [self.CVVNumber substringToIndex:3];
             return NO;
-        } else if (self.CVVNumber.length == 4) {
-            return NO;
-        }
+        } else if (self.CVVNumber.length == 4) return NO;
+    
     } else if (textField == self.creditCardTextField) {
-        if ([string isEqualToString:@""]) {
-            [self clearCVVField];
-            return YES;
-        } else if (self.cardNumber.length == 6 && (!self.cardType)) {
-            self.cardNumber = [self.cardNumber substringToIndex:6];
+        if (self.cardNumber.length >= 6 && (!self.cardType)) {
             return NO;
         } else if (([self.cardType isEqualToString:@"Amex"] && self.cardNumber.length == 15 ) || (self.cardNumber.length == 16)) {
             self.cardNumber = [self.cardNumber substringToIndex:self.cardNumber.length];
             [self CVVEnable:YES];
             return NO;
         }
+    
+    } else if (textField == self.expirationMonthField || textField == self.expirationYearField) {
+        if (textField.text.length == 2) return NO;
+        
+        if (textField == self.expirationMonthField) {
+            int maxDigit = 1;
+            if (self.expirationMonth.length == 1) {
+                if ([string intValue] == 0 && [self.expirationMonth intValue] == 0) return NO;
+                maxDigit = ([self.expirationMonth intValue] == 1 ? 2 : 9);
+            }
+            if ([string intValue] > maxDigit) return NO;
+            
+        } else if (textField == self.expirationYearField) {
+            if (self.expirationYear.length == 2) return NO;
+        }
     }
+    
     return YES;
-}
-
-- (IBAction)editingDateEnded:(UITextField *)sender
-{
-    if (!self.expirationDate) {
-        self.expirationDateTextField.text = @"";
-    }
-}
-
-- (void)clearCVVField
-{
-    self.CVVNumber = @"";
-    [self CVVEnable:NO];
 }
 
 - (void)setCardNumber:(NSString *)cardNumber
@@ -71,9 +73,12 @@
 
 - (NSDate *)expirationDate
 {
+    if (!self.expirationMonth || !self.expirationYear) return nil;
+    
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"MM/yy"];
-    NSDate *date = [formatter dateFromString:self.expirationDateTextField.text];
+    [formatter setDateFormat:@"MMyy"];
+    NSDate *date = [formatter dateFromString:[[self expirationMonth] stringByAppendingString:[self expirationYear]]];
+    NSLog(@"%@", date);
     return date;
 }
 
@@ -84,9 +89,28 @@
 
 - (IBAction)editingCVVEnded:(UITextField *)sender
 {
-    self.cardLogo = [UIImage imageNamed:self.cardType];
+    self.cardType = [CFMCreditCard typeForCreditCardNumber:self.cardNumber];
 }
 
+- (void)setExpirationMonth:(NSString *)expirationMonth
+{
+    self.expirationMonthField.text = expirationMonth;
+}
+
+- (NSString *)expirationMonth
+{
+    return [self.expirationMonthField.text isEqualToString:@""] ? nil : self.expirationMonthField.text;
+}
+
+- (void)setExpirationYear:(NSString *)expirationYear
+{
+    self.expirationYearField.text = expirationYear;
+}
+
+- (NSString *)expirationYear
+{
+    return [self.expirationYearField.text isEqualToString:@""] ? nil : self.expirationYearField.text;
+}
 
 - (void)setCVVNumber:(NSString *)CVVNumber {
     self.CVVTextField.text = CVVNumber;
@@ -122,10 +146,16 @@
 
 - (void)clearForm
 {
-    [self clearCVVField];
     self.cardNumber = @"";
     self.cardType = nil;
-    self.expirationDateTextField.text = @"";
+    self.CVVNumber = @"";
+    self.expirationMonth = @"";
+    self.expirationYear = @"";
+}
+
+- (void)setFocusOnCreditCardNumber
+{
+    [self.creditCardTextField becomeFirstResponder];
 }
 
 @end

@@ -16,7 +16,7 @@
 @property (nonatomic, strong) UIImage *cardLogo;
 @property (nonatomic, strong) NSString *cardType;
 
+- (void)setFocusOnCreditCardNumber;
 - (void)setCardLogo:(UIImage *)cardLogo;
-- (void)CVVEnable:(BOOL)condition;
 - (void)clearForm;
 @end

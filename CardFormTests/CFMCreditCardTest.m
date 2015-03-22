@@ -49,7 +49,7 @@ describe(@"errorCheckingTest", ^{
                                                                      cardType:@"Amex"
                                                                expirationDate:[NSDate dateWithTimeIntervalSinceNow:99999999]
                                                                     CVVNumber:@"4444"];
-        [[theValue([creditCard errorMessage]) should] equal:theValue(nil)];
+        [[[creditCard errorMessage] should] beNil];
     });
 });
 

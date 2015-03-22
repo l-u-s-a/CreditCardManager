@@ -59,21 +59,25 @@
     return [Luhn validateString:cardNumber];
 }
 
-+ (NSString *)typeForCreditCardNumber:(NSString *)creditCardNumber
++ (NSString *)typeForCreditCardNumber:(NSString *)creditCardTypeIdentificator
 {
+    if (creditCardTypeIdentificator.length > 6) {
+        creditCardTypeIdentificator = [creditCardTypeIdentificator substringToIndex:6];
+    }
+    
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
     
-    double cardNumber = [[formatter numberFromString:creditCardNumber] doubleValue];
+    double cardIdentificator = [[formatter numberFromString:creditCardTypeIdentificator] doubleValue];
     
-    if ((cardNumber >= 340000 && cardNumber < 350000) || (cardNumber >= 370000 && cardNumber < 380000)) {
+    if ((cardIdentificator >= 340000 && cardIdentificator < 350000) || (cardIdentificator >= 370000 && cardIdentificator < 380000)) {
             return @"Amex";
-    } else if ((cardNumber >= 601100 && cardNumber < 601200) || (cardNumber >= 622126 && cardNumber <= 622925) || (cardNumber >= 644000 && cardNumber < 650000) || (cardNumber >= 650000 && cardNumber < 660000)) {
+    } else if ((cardIdentificator >= 601100 && cardIdentificator < 601200) || (cardIdentificator >= 622126 && cardIdentificator <= 622925) || (cardIdentificator >= 644000 && cardIdentificator < 650000) || (cardIdentificator >= 650000 && cardIdentificator < 660000)) {
             return @"Discover";
-    } else if (cardNumber >= 352800 && cardNumber < 359000) {
+    } else if (cardIdentificator >= 352800 && cardIdentificator < 359000) {
             return @"JCB";
-    } else if (cardNumber >= 510000 && cardNumber < 560000) {
+    } else if (cardIdentificator >= 510000 && cardIdentificator < 560000) {
             return @"Mastercard";
-    } else if (cardNumber >= 400000 && cardNumber < 500000) {
+    } else if (cardIdentificator >= 400000 && cardIdentificator < 500000) {
             return @"Visa";
     } else {
         return nil;
