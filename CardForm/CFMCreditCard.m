@@ -27,23 +27,23 @@
 {
     if (self.creditCardNumber.length == 0) {
         return @"Please enter credit card number";
+    } else if (!self.creditCardType) {
+        return @"Card type unrecognized";
+    } else if ([self.creditCardType isEqualToString:@"Amex"] && self.creditCardNumber.length != 15) {
+        return @"Amex card must have 15 digits";
+    } else if (![self.creditCardType isEqualToString:@"Amex"] && self.creditCardNumber.length != 16) {
+        return [NSString stringWithFormat:@"%@ must have 16 digits", self.creditCardType];
     } else if (![CFMCreditCard isValidForCardNumber:self.creditCardNumber]) {
         return @"Invalid card number";
-    } else if ([self.creditCardType isEqualToString:@"Amex"]) {
-        if (self.creditCardNumber.length != 15) {
-            return @"Amex card must have 15 digits";
-        } else if (self.CVVNumber.length != 4) {
-            return @"CVV number must have 4 digits";
-        }
-    } else if (self.creditCardNumber.length != 16) {
-        return [NSString stringWithFormat:@"%@ must have 16 digits", self.creditCardType];
     } else if (!self.expirationDate) {
         return @"Please enter credit card expiration date";
     } else if ([self.expirationDate compare:[NSDate date]] == NSOrderedAscending) {
         return @"Oops! Your card seems to be out of date!";
     } else if (self.CVVNumber.length == 0) {
         return @"Please enter CVV number";
-    } else if (self.CVVNumber.length != 3) {
+    } else if ([self.creditCardType isEqualToString:@"Amex"] && self.CVVNumber.length != 4) {
+        return @"Amex card CVV has 4 digits";
+    } else if (![self.creditCardType isEqualToString:@"Amex"] && self.CVVNumber.length != 3) {
         return [NSString stringWithFormat:@"%@ has 3-digit CVV", self.creditCardType];
     }
     return nil;

@@ -7,6 +7,7 @@
 //
 
 #import "Kiwi.h"
+#import "CFMRepositoryProvider.h"
 #import "CFMCreditCard.h"
 
 SPEC_BEGIN(CreditCard)
@@ -18,18 +19,37 @@ describe(@"validationTest", ^{
 });
 
 describe(@"errorCheckingTest", ^{
-    it(@"should return message that describes specific error", ^{
-        CFMCreditCard *creditCard = [[CFMCreditCard alloc] initWithCardNumber:@"345436546"
-                                                                     cardType:@"Amex"
-                                                               expirationDate:[NSDate date]
-                                                                    CVVNumber:@"4444"];
-        [[[creditCard errorMessage] should] equal:@"Invalid card number"];
-        
-        creditCard = [[CFMCreditCard alloc] initWithCardNumber:@""
-                                                      cardType:@"Amex"
-                                                expirationDate:[NSDate date]
-                                                     CVVNumber:@"4444"];
+    
+    it(@"should check if message asks user to enter card number", ^{
+        CFMCreditCard *creditCard = [[CFMCreditCard alloc] initWithCardNumber:@""
+                                                                     cardType:@""
+                                                               expirationDate:nil
+                                                                    CVVNumber:@""];
         [[[creditCard errorMessage] should] equal:@"Please enter credit card number"];
+    });
+    
+    it(@"should check if message asks user to enter expiration date", ^{
+        CFMCreditCard *creditCard = [[CFMCreditCard alloc] initWithCardNumber:@"345634563465434"
+                                                                     cardType:@"Amex"
+                                                               expirationDate:nil
+                                                                    CVVNumber:@"4444"];
+        [[[creditCard errorMessage] should] equal:@"Please enter credit card expiration date"];
+    });
+    
+    it(@"should check if message asks user to enter CVV number", ^{
+        CFMCreditCard *creditCard = [[CFMCreditCard alloc] initWithCardNumber:@"345634563465434"
+                                                                     cardType:@"Amex"
+                                                               expirationDate:[NSDate dateWithTimeIntervalSinceNow:99999999]
+                                                                    CVVNumber:@""];
+        [[[creditCard errorMessage] should] equal:@"Please enter CVV number"];
+    });
+    
+    it(@"should check that no error message appear", ^{
+        CFMCreditCard *creditCard = [[CFMCreditCard alloc] initWithCardNumber:@"345634563465434"
+                                                                     cardType:@"Amex"
+                                                               expirationDate:[NSDate dateWithTimeIntervalSinceNow:99999999]
+                                                                    CVVNumber:@"4444"];
+        [[theValue([creditCard errorMessage]) should] equal:theValue(nil)];
     });
 });
 

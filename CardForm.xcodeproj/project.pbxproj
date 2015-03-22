@@ -15,6 +15,7 @@
 		A10C5EE21ABA11280083DD42 /* CFMCreditCard.m in Sources */ = {isa = PBXBuildFile; fileRef = A10C5EE11ABA11280083DD42 /* CFMCreditCard.m */; };
 		A10C5EE51ABA14770083DD42 /* CFMRepositoryProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = A10C5EE41ABA14770083DD42 /* CFMRepositoryProvider.m */; };
 		A1CF06681ABCC93D00CF028B /* CFMCreditCardTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A1CF06671ABCC93D00CF028B /* CFMCreditCardTest.m */; };
+		A1D0C6EC1ABF1EE800D8F48B /* CFMRepositoryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D0C6EB1ABF1EE800D8F48B /* CFMRepositoryTest.m */; };
 		A1F94FC21AB9D2A3002004F5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F94FC11AB9D2A3002004F5 /* main.m */; };
 		A1F94FC51AB9D2A3002004F5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F94FC41AB9D2A3002004F5 /* AppDelegate.m */; };
 		A1F94FC81AB9D2A3002004F5 /* CardForm.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A1F94FC61AB9D2A3002004F5 /* CardForm.xcdatamodeld */; };
@@ -50,6 +51,7 @@
 		A10C5EE31ABA14770083DD42 /* CFMRepositoryProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFMRepositoryProvider.h; sourceTree = "<group>"; };
 		A10C5EE41ABA14770083DD42 /* CFMRepositoryProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFMRepositoryProvider.m; sourceTree = "<group>"; };
 		A1CF06671ABCC93D00CF028B /* CFMCreditCardTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFMCreditCardTest.m; sourceTree = "<group>"; };
+		A1D0C6EB1ABF1EE800D8F48B /* CFMRepositoryTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFMRepositoryTest.m; sourceTree = "<group>"; };
 		A1F94FBC1AB9D2A3002004F5 /* CardForm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardForm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1F94FC01AB9D2A3002004F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A1F94FC11AB9D2A3002004F5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				A1CF06671ABCC93D00CF028B /* CFMCreditCardTest.m */,
+				A1D0C6EB1ABF1EE800D8F48B /* CFMRepositoryTest.m */,
 				A1F94FDC1AB9D2A3002004F5 /* Supporting Files */,
 			);
 			path = CardFormTests;
@@ -359,6 +362,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1D0C6EC1ABF1EE800D8F48B /* CFMRepositoryTest.m in Sources */,
 				A1CF06681ABCC93D00CF028B /* CFMCreditCardTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

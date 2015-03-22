@@ -34,13 +34,10 @@
 
 
 - (IBAction)saveButtonPressed:(UIButton *)sender {
-    NSString *cardNumber = self.view.cardNumber;
-    NSString *cardType = self.view.cardType;
-    NSDate *expirationDate = self.view.expirationDate;
-    NSString *CVVNumber = self.view.CVVNumber;
-    
-    CFMCreditCard *creditCard = [[CFMCreditCard alloc] initWithCardNumber:cardNumber cardType:cardType expirationDate:expirationDate CVVNumber:CVVNumber];
-    
+    CFMCreditCard *creditCard = [[CFMCreditCard alloc] initWithCardNumber:self.view.cardNumber
+                                                                 cardType:self.view.cardType
+                                                           expirationDate:self.view.expirationDate
+                                                                CVVNumber:self.view.CVVNumber];
     if (creditCard.isValid) {
         [self showMessageSuccess];
         [[CFMRepositoryProvider repository] addCard:creditCard];
