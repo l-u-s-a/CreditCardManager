@@ -16,6 +16,6 @@ iOS application for validating and saving credit cards
 
 <img src="http://i1290.photobucket.com/albums/b531/uljar9/Screen%20Shot%202015-05-29%20at%2015.59.40_zpsjkj1wb76.png" width="400px"/>
 
-<img src="http://i1290.photobucket.com/albums/b531/uljar9/Screen%20Shot%202015-05-29%20at%2016.01.28_zps11jgtqcx.png" width="400px"/>
+<img src="http://i1290.photobucket.com/albums/b531/uljar9/Screen%20Shot%202015-05-29%20at%2016.01.28_zps11jgtqcx.png" width="390px"/>
 <img src="http://i1290.photobucket.com/albums/b531/uljar9/strelica_zpsoqs3nq3w.jpg" width="70px"/>
 <img src="http://i1290.photobucket.com/albums/b531/uljar9/Screen%20Shot%202015-05-29%20at%2016.00.55_zps9h7hqrod.png" width="350px"/>
