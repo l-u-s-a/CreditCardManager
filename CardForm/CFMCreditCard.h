@@ -19,7 +19,18 @@
 @property (nonatomic, assign, getter=isValid) BOOL valid;
 
 - (instancetype)initWithCardNumber:(NSString *)creditCardNumber cardType:(NSString *)creditCardType expirationDate:(NSDate *)expirationDate CVVNumber:(NSString *)CVVNumber;
+
+/*! Checks all card attributes and returns error message if exists */
 - (NSString *)errorMessage;
+
+//+ (UIImage *)imageForCreditCard:(CFMCreditCard *)card;
+//+ (UIImage *)imageForCreditCardType:(NSString *)type;
+- (UIImage *)image;
+
+/*! Checks first 6 digits of the card and returns matching type(Amex, Discover, ...) */
 + (NSString *)typeForCreditCardNumber:(NSString *)creditCardNumber;
+
+/*! Performs Luhn validation on card number and returns result */
 + (BOOL)isValidForCardNumber:(NSString *)cardNumber;
+
 @end

@@ -27,12 +27,6 @@
     if ([string isEqualToString:@""]) {
         if (textField.text.length == 1) textField.text = @"";
     
-    } else if (textField == self.CVVTextField) {
-        if (![self.cardType isEqualToString:@"Amex"] && self.CVVNumber.length == 3) {
-            self.CVVNumber = [self.CVVNumber substringToIndex:3];
-            return NO;
-        } else if (self.CVVNumber.length == 4) return NO;
-    
     } else if (textField == self.creditCardTextField) {
         if (self.cardNumber.length >= 6 && (!self.cardType)) {
             return NO;
@@ -41,7 +35,7 @@
             [self CVVEnable:YES];
             return NO;
         }
-    
+        
     } else if (textField == self.expirationMonthField || textField == self.expirationYearField) {
         if (textField.text.length == 2) return NO;
         
@@ -56,6 +50,12 @@
         } else if (textField == self.expirationYearField) {
             if (self.expirationYear.length == 2) return NO;
         }
+    } else if (textField == self.CVVTextField) {
+        if (![self.cardType isEqualToString:@"Amex"] && self.CVVNumber.length == 3) {
+            self.CVVNumber = [self.CVVNumber substringToIndex:3];
+            return NO;
+        } else if (self.CVVNumber.length == 4) return NO;
+    
     }
     
     return YES;
@@ -112,7 +112,8 @@
     return [self.expirationYearField.text isEqualToString:@""] ? nil : self.expirationYearField.text;
 }
 
-- (void)setCVVNumber:(NSString *)CVVNumber {
+- (void)setCVVNumber:(NSString *)CVVNumber
+{
     self.CVVTextField.text = CVVNumber;
 }
 

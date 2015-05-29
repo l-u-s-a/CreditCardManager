@@ -10,6 +10,7 @@
 #import <UIKit/UIKit.h>
 #import "CFMCreditCard.h"
 
+/*! Protocol for storing cards in repository */
 @protocol IRepository <NSObject>
 - (void)addCard:(CFMCreditCard *)creditCard;
 - (void)removeCard:(CFMCreditCard *)creditCard;

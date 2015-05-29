@@ -84,4 +84,9 @@
     }
 }
 
+- (UIImage *)image
+{
+    return [UIImage imageNamed:self.creditCardType];
+}
+
 @end

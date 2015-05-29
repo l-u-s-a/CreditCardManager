@@ -24,13 +24,13 @@
     [self.view setFocusOnCreditCardNumber];
 }
 
-
-- (IBAction)creditCardNumberChanged:(UITextField *)sender {
+- (IBAction)creditCardNumberChanged:(UITextField *)sender
+{
     self.view.cardType = [CFMCreditCard typeForCreditCardNumber:self.view.cardNumber];
 }
 
-
-- (IBAction)saveButtonPressed:(UIButton *)sender {
+- (IBAction)saveButtonPressed:(UIButton *)sender
+{
     CFMCreditCard *creditCard = [[CFMCreditCard alloc] initWithCardNumber:self.view.cardNumber
                                                                  cardType:self.view.cardType
                                                            expirationDate:self.view.expirationDate

@@ -15,7 +15,9 @@ static id<IRepository> repository;
 
 + (id <IRepository>)repository
 {
-    if (!repository) repository = [[CFMRepository alloc] init];
+    @synchronized(repository) {
+        if (!repository) repository = [[CFMRepository alloc] init];
+    }
     return repository;
 }
 
